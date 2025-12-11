@@ -1,0 +1,48 @@
+/* ESTILOS BASE - MÓVIL */
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* TABLET */
+@media (min-width: 680px) and (max-width: 1023px) {
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  textarea, button {
+    grid-column: span 2;
+  }
+}
+
+/* ORDENADOR */
+@media (min-width: 1024px) {
+  form {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  textarea {
+    grid-column: span 3;
+  }
+  button {
+    grid-column: span 3;
+  }
+}
+
+/* IMPRESIÓN */
+@media print {
+  * { visibility: hidden; }
+  form { visibility: visible; position: absolute; top: 0; left: 0; }
+}
